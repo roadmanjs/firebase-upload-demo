@@ -16,7 +16,7 @@ import { setContext } from "@apollo/client/link/context";
 import { useMemo } from "react";
 import { useNavigation } from "@react-navigation/core";
 
-const API_URL = "192.168.2.26:3999";
+const API_URL = "192.168.2.26:3099";
 // @ts-ignore
 let apolloClient: ApolloClient;
 

@@ -21,7 +21,7 @@ import { useApolloClient } from "@apollo/client";
 LogBox.ignoreLogs([`Setting a timer for a long period`]);
 
 
-export const uploadComponent = () => {
+export const UploadComponent = () => {
 
     const client = useApolloClient()
 
@@ -51,8 +51,10 @@ export const uploadComponent = () => {
             xhr.send(null);
         });
 
+        console.log("blob is ", blob);
+
         // upload the blob
-        const file = new File(blob, "mycoolassfile");
+        const file = new File([blob], "mycoolassfile");
 
         const uploaded = await uploadFilesApi({ files: [file], client })
 
