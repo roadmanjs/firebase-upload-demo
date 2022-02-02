@@ -37,6 +37,8 @@ export const UploadComponent = () => {
         // TODO do this fix for mobile to get the actual file blob from the xhr request, then forward it to graphql mutation
         // Why are we using XMLHttpRequest? See:
         // https://github.com/expo/expo/issues/2402#issuecomment-443726662
+
+        // TODO this implementation works for both web and mobile, super sick
         const blob: any = await new Promise((resolve, reject) => {
             const xhr = new XMLHttpRequest();
             xhr.onload = function () {
@@ -50,6 +52,11 @@ export const UploadComponent = () => {
             xhr.open("GET", uri, true);
             xhr.send(null);
         });
+
+        // TODO 
+        // convert this string stream to uploadable file for my graphql path,
+        // else add a path for receiving string streams.
+        
 
         console.log("blob is ", blob);
 

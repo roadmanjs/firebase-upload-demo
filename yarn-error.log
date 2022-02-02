@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/ceddymuhoza/.nvm/versions/node/v16.11.0/bin/node /Users/ceddymuhoza/.yarn/bin/yarn.js add @types/lodash @types/omit-depp -D
+  /Users/ceddymuhoza/.nvm/versions/node/v16.11.0/bin/node /Users/ceddymuhoza/.yarn/bin/yarn.js add 3.4.16
 
 PATH: 
   /Applications/Couchbase\ Server.app/Contents/Resources/couchbase-core/bin:/Users/ceddymuhoza/.krew/bin:/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin:/Users/ceddymuhoza/.yarn/bin:/Users/ceddymuhoza/.config/yarn/global/node_modules/.bin:/Users/ceddymuhoza/.nvm/versions/node/v16.11.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Applications/Couchbase\ Server.app/Contents/Resources/couchbase-core/bin:/Users/ceddymuhoza/.krew/bin:/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin:/Users/ceddymuhoza/.yarn/bin:/Users/ceddymuhoza/.config/yarn/global/node_modules/.bin:/Users/ceddymuhoza/.nvm/versions/node/v16.11.0/bin:/Users/ceddymuhoza/.cargo/bin:/Users/ceddymuhoza/flutter/bin:/Applications/Couchbase\ Server.app/Contents/Resources/couchbase-core/bin/cbimport:/Users/ceddymuhoza/flutter/bin:/Applications/Couchbase\ Server.app/Contents/Resources/couchbase-core/bin/cbimport
@@ -14,7 +14,7 @@ Platform:
   darwin x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/@types%2fomit-depp: Not found
+  Error: https://registry.yarnpkg.com/3.4.16: Not found
       at Request.params.callback [as _callback] (/Users/ceddymuhoza/.yarn/lib/cli.js:66988:18)
       at Request.self.callback (/Users/ceddymuhoza/.yarn/lib/cli.js:140749:22)
       at Request.emit (node:events:390:28)
@@ -39,6 +39,7 @@ npm manifest:
     "dependencies": {
       "@apollo/client": "^3.5.8",
       "@react-navigation/core": "^6.1.1",
+      "@roadmanjs/firebase-client": "^0.0.7",
       "apollo-upload-client": "^17.0.0",
       "expo": "~44.0.0",
       "expo-image-picker": "~12.0.1",
@@ -48,10 +49,13 @@ npm manifest:
       "react": "17.0.1",
       "react-dom": "17.0.1",
       "react-native": "0.64.3",
-      "react-native-web": "0.17.1"
+      "react-native-web": "0.17.1",
+      "subscriptions-transport-ws": "^0.11.0"
     },
     "devDependencies": {
       "@babel/core": "^7.12.9",
+      "@types/apollo-upload-client": "^17.0.0",
+      "@types/lodash": "^4.14.178",
       "@types/react": "~17.0.21",
       "@types/react-native": "~0.64.12",
       "typescript": "~4.3.5"
@@ -67,7 +71,7 @@ Lockfile:
   # yarn lockfile v1
   
   
-  "@apollo/client@^3.5.8":
+  "@apollo/client@^3.0.0", "@apollo/client@^3.5.8":
     version "3.5.8"
     resolved "https://registry.yarnpkg.com/@apollo/client/-/client-3.5.8.tgz#7215b974c5988b6157530eb69369209210349fe0"
     integrity sha512-MAm05+I1ullr64VLpZwon/ISnkMuNLf6vDqgo9wiMhHYBGT4yOAbAIseRdjCHZwfSx/7AUuBgaTNOssZPIr6FQ==
@@ -1499,6 +1503,13 @@ Lockfile:
     dependencies:
       nanoid "^3.1.23"
   
+  "@roadmanjs/firebase-client@^0.0.7":
+    version "0.0.7"
+    resolved "https://registry.yarnpkg.com/@roadmanjs/firebase-client/-/firebase-client-0.0.7.tgz#a5c2e873384a975b1d22120eb0555907f7927342"
+    integrity sha512-KVMAu5Fmm6TkFCszz3GhI1ZXFSGomM4AYd28Aic6JC4Is2uKuQCSOMyz0Znev52VBN45aZEAu0tLpM1WR+mu2g==
+    dependencies:
+      graphql-tag "^2.12.5"
+  
   "@sideway/address@^4.1.3":
     version "4.1.3"
     resolved "https://registry.yarnpkg.com/@sideway/address/-/address-4.1.3.tgz#d93cce5d45c5daec92ad76db492cc2ee3c64ab27"
@@ -1515,6 +1526,20 @@ Lockfile:
     version "2.0.0"
     resolved "https://registry.yarnpkg.com/@sideway/pinpoint/-/pinpoint-2.0.0.tgz#cff8ffadc372ad29fd3f78277aeb29e632cc70df"
     integrity sha512-RNiOoTPkptFtSVzQevY/yWtZwf/RxyVnPy/OcA9HBM3MlGDnBEYL5B41H0MTn0Uec8Hi+2qUtTfG2WWZBmMejQ==
+  
+  "@types/apollo-upload-client@^17.0.0":
+    version "17.0.0"
+    resolved "https://registry.yarnpkg.com/@types/apollo-upload-client/-/apollo-upload-client-17.0.0.tgz#e9ae78c3c3f1a70b5724616c83f5af2ad902f1d0"
+    integrity sha512-S1HUj9g+wn0fM29vLsnD87hTW2h2k/ELlTTJ+mUHTnF6oxmm46KkqxrzFPR7u2rQBjjSiKQEaXLqBn76s8bzBg==
+    dependencies:
+      "@apollo/client" "^3.0.0"
+      "@types/extract-files" "*"
+      graphql "14 - 16"
+  
+  "@types/extract-files@*":
+    version "8.1.1"
+    resolved "https://registry.yarnpkg.com/@types/extract-files/-/extract-files-8.1.1.tgz#11b67e795ad2c8b483431e8d4f190db2fd22944b"
+    integrity sha512-dMJJqBqyhsfJKuK7p7HyyNmki7qj1AlwhUKWx6KrU7i1K2T2SPsUsSUTWFmr/sEM1q8rfR8j5IyUmYrDbrhfjQ==
   
   "@types/graceful-fs@^4.1.2":
     version "4.1.5"
@@ -1541,6 +1566,11 @@ Lockfile:
     integrity sha512-c3mAZEuK0lvBp8tmuL74XRKn1+y2dcwOUpH7x4WrF6gk1GIgiluDRgMYQtw2OFcBvAJWlt6ASU3tSqxp0Uu0Aw==
     dependencies:
       "@types/istanbul-lib-report" "*"
+  
+  "@types/lodash@^4.14.178":
+    version "4.14.178"
+    resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.178.tgz#341f6d2247db528d4a13ddbb374bcdc80406f4f8"
+    integrity sha512-0d5Wd09ItQWH1qFbEyQ7oTQ3GZrMfth5JkbN3EvTKLXcHLRDSXeLnlvlOn0wvxVIwK5o2M8JzP/OWz7T3NRsbw==
   
   "@types/node@*":
     version "17.0.14"
@@ -1894,6 +1924,11 @@ Lockfile:
       "@babel/plugin-transform-spread" "^7.0.0"
       "@babel/plugin-transform-template-literals" "^7.0.0"
       babel-plugin-syntax-trailing-function-commas "^7.0.0-beta.0"
+  
+  backo2@^1.0.2:
+    version "1.0.2"
+    resolved "https://registry.yarnpkg.com/backo2/-/backo2-1.0.2.tgz#31ab1ac8b129363463e35b3ebb69f4dfcfba7947"
+    integrity sha1-MasayLEpNjRj41s+u2n038+6eUc=
   
   balanced-match@^1.0.0:
     version "1.0.2"
@@ -2540,6 +2575,11 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/event-target-shim/-/event-target-shim-5.0.1.tgz#5d4d3ebdf9583d63a5333ce2deb7480ab2b05789"
     integrity sha512-i/2XbnSz/uxRCU6+NdVJgKWDTM427+MqYbkQzD321DuCQJUqOuJKIA0IM2+W2xtYHdKOmZ4dR6fExsd4SXL+WQ==
   
+  eventemitter3@^3.1.0:
+    version "3.1.2"
+    resolved "https://registry.yarnpkg.com/eventemitter3/-/eventemitter3-3.1.2.tgz#2d3d48f9c346698fce83a85d7d664e98535df6e7"
+    integrity sha512-tvtQIeLVHjDkJYnzf2dgVMxfuSGJeM/7UCG17TT4EumTfNtF+0nebF/4zWOIkCreAbtNqhGEboB6BWrwqNaw4Q==
+  
   exec-sh@^0.3.2:
     version "0.3.6"
     resolved "https://registry.yarnpkg.com/exec-sh/-/exec-sh-0.3.6.tgz#ff264f9e325519a60cb5e273692943483cca63bc"
@@ -3012,12 +3052,17 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.9.tgz#041b05df45755e587a24942279b9d113146e1c96"
     integrity sha512-NtNxqUcXgpW2iMrfqSfR73Glt39K+BLwWsPs94yR63v45T0Wbej7eRmL5cWfwEgqXnmjQp3zaJTshdRW/qC2ZQ==
   
-  graphql-tag@^2.12.3:
+  graphql-tag@^2.12.3, graphql-tag@^2.12.5:
     version "2.12.6"
     resolved "https://registry.yarnpkg.com/graphql-tag/-/graphql-tag-2.12.6.tgz#d441a569c1d2537ef10ca3d1633b48725329b5f1"
     integrity sha512-FdSNcu2QQcWnM2VNvSCCDCVS5PpPqpzgFT8+GXzqJuoDd0CBncxCY278u4mhRO7tMgo2JjgJA5aZ+nWSQ/Z+xg==
     dependencies:
       tslib "^2.1.0"
+  
+  "graphql@14 - 16":
+    version "16.3.0"
+    resolved "https://registry.yarnpkg.com/graphql/-/graphql-16.3.0.tgz#a91e24d10babf9e60c706919bb182b53ccdffc05"
+    integrity sha512-xm+ANmA16BzCT5pLjuXySbQVFwH3oJctUVdy81w1sV0vBU0KgDdBGtxQOUd5zqOBk/JayAFeG8Dlmeq74rjm/A==
   
   has-flag@^3.0.0:
     version "3.0.0"
@@ -3341,6 +3386,11 @@ Lockfile:
     dependencies:
       node-fetch "^1.0.1"
       whatwg-fetch ">=0.10.0"
+  
+  iterall@^1.2.1:
+    version "1.3.0"
+    resolved "https://registry.yarnpkg.com/iterall/-/iterall-1.3.0.tgz#afcb08492e2915cbd8a0884eb93a8c94d0d72fea"
+    integrity sha512-QZ9qOMdF+QLHxy1QIpUHUU1D5pS2CG2P69LF6L6CPjPYA/XMOmKV3PZpawHoAjHNyB0swdVTRxdYT4tbBbxqwg==
   
   jest-get-type@^26.3.0:
     version "26.3.0"
@@ -5217,6 +5267,17 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/strip-eof/-/strip-eof-1.0.0.tgz#bb43ff5598a6eb05d89b59fcd129c983313606bf"
     integrity sha1-u0P/VZim6wXYm1n80SnJgzE2Br8=
   
+  subscriptions-transport-ws@^0.11.0:
+    version "0.11.0"
+    resolved "https://registry.yarnpkg.com/subscriptions-transport-ws/-/subscriptions-transport-ws-0.11.0.tgz#baf88f050cba51d52afe781de5e81b3c31f89883"
+    integrity sha512-8D4C6DIH5tGiAIpp5I0wD/xRlNiZAPGHygzCe7VzyzUoxHtawzjNAY9SUTXU05/EY2NMY9/9GF0ycizkXr1CWQ==
+    dependencies:
+      backo2 "^1.0.2"
+      eventemitter3 "^3.1.0"
+      iterall "^1.2.1"
+      symbol-observable "^1.0.4"
+      ws "^5.2.0 || ^6.0.0 || ^7.0.0"
+  
   sucrase@^3.20.0:
     version "3.20.3"
     resolved "https://registry.yarnpkg.com/sucrase/-/sucrase-3.20.3.tgz#424f1e75b77f955724b06060f1ae708f5f0935cf"
@@ -5252,6 +5313,11 @@ Lockfile:
     version "1.0.0"
     resolved "https://registry.yarnpkg.com/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz#6eda4bd344a3c94aea376d4cc31bc77311039e09"
     integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
+  
+  symbol-observable@^1.0.4:
+    version "1.2.0"
+    resolved "https://registry.yarnpkg.com/symbol-observable/-/symbol-observable-1.2.0.tgz#c22688aed4eab3cdc2dfeacbb561660560a00804"
+    integrity sha512-e900nM8RRtGhlV36KGEU9k65K3mPb1WV70OdjfxlG2EAuM1noi/E/BaW/uMhL7bPEssK8QV57vN3esixjUvcXQ==
   
   symbol-observable@^4.0.0:
     version "4.0.0"
@@ -5601,17 +5667,17 @@ Lockfile:
       options ">=0.0.5"
       ultron "1.0.x"
   
+  "ws@^5.2.0 || ^6.0.0 || ^7.0.0", ws@^7:
+    version "7.5.6"
+    resolved "https://registry.yarnpkg.com/ws/-/ws-7.5.6.tgz#e59fc509fb15ddfb65487ee9765c5a51dec5fe7b"
+    integrity sha512-6GLgCqo2cy2A2rjCNFlxQS6ZljG/coZfZXclldI8FB/1G3CCI36Zd8xy2HrFVACi8tfk5XrgLQEk+P0Tnz9UcA==
+  
   ws@^6.1.4:
     version "6.2.2"
     resolved "https://registry.yarnpkg.com/ws/-/ws-6.2.2.tgz#dd5cdbd57a9979916097652d78f1cc5faea0c32e"
     integrity sha512-zmhltoSR8u1cnDsD43TX59mzoMZsLKqUweyYBAIvTngR3shc0W6aOZylZmq/7hqyVxPdi+5Ud2QInblgyE72fw==
     dependencies:
       async-limiter "~1.0.0"
-  
-  ws@^7:
-    version "7.5.6"
-    resolved "https://registry.yarnpkg.com/ws/-/ws-7.5.6.tgz#e59fc509fb15ddfb65487ee9765c5a51dec5fe7b"
-    integrity sha512-6GLgCqo2cy2A2rjCNFlxQS6ZljG/coZfZXclldI8FB/1G3CCI36Zd8xy2HrFVACi8tfk5XrgLQEk+P0Tnz9UcA==
   
   xcode@^2.0.0:
     version "2.1.0"

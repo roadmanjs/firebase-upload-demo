@@ -8,7 +8,7 @@
     "eject": "expo eject"
   },
   "dependencies": {
-    "@apollo/client": "^3.5.8",
+    "@apollo/client": "3.4.16",
     "@react-navigation/core": "^6.1.1",
     "@roadmanjs/firebase-client": "^0.0.7",
     "apollo-upload-client": "^17.0.0",
