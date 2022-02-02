@@ -25,8 +25,10 @@ export const UploadComponent = () => {
 
     const client = useApolloClient()
 
-    const [state, setState] = React.useState({
-        image: null,
+    const [state, setState] = React.useState<{
+        image?: string;
+        uploading: boolean;
+    }>({
         uploading: false,
     });
 
@@ -53,23 +55,38 @@ export const UploadComponent = () => {
             xhr.send(null);
         });
 
+        // function urltoFile(url: string, filename?: string, mimeType?: string): Promise<File> {
+        //     return (fetch(url)
+        //         .then(function (res) { return res.arrayBuffer(); })
+        //         .then(function (buf) { return new File([buf], filename || "some name", { type: mimeType = "image/jpeg" }); })
+        //     );
+        // }
+
+        // const newFile = new File([blob], "blob");
+
+        // const url = URL.createObjectURL(newFile);
+
+        setState({ ...state, image: uri })
+
         // TODO 
         // convert this string stream to uploadable file for my graphql path,
         // else add a path for receiving string streams.
-        
 
-        console.log("blob is ", blob);
 
-        // upload the blob
-        const file = new File([blob], "mycoolassfile");
+        // const file = await urltoFile(uri);
 
-        const uploaded = await uploadFilesApi({ files: [file], client })
+        console.log("resolved blog", blob);
 
-        console.log("uploaded is ", uploaded);
-        // We're done with the blob, close and release it
-        blob.close();
 
-        return uploaded;
+        // console.log(s"file blog is", file);
+
+        // const uploaded = await uploadFilesApi({ files: [file], client })
+
+        // console.log("uploaded is ", uploaded);
+        // // We're done with the blob, close and release it
+        // blob.close();
+
+        // return uploaded;
     }
 
     const _maybeRenderUploadingOverlay = () => {
