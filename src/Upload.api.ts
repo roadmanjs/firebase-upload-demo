@@ -1,20 +1,17 @@
 import {
+  FileStringInput,
   MediaDataType,
-  UPLOAD_FILES_MUTATION,
+  UPLOAD_STRING_FILES_MUTATION,
 } from "@roadmanjs/firebase-client";
 
 import { ApolloClient } from "@apollo/client";
 import _get from "lodash/get";
 
-interface DataResponse {
-  data?: MediaDataType[];
-}
-
 export const uploadFilesApi = async ({
   files,
   client,
 }: {
-  files: File[];
+  files: FileStringInput[];
   client: ApolloClient<any>;
 }): Promise<MediaDataType[]> => {
   // console.log('portfolios are', JSON.stringify(args));
@@ -23,7 +20,7 @@ export const uploadFilesApi = async ({
     const userId = "ceddymuhoza";
 
     const { data: dataResponse }: any = await client.mutate({
-      mutation: UPLOAD_FILES_MUTATION,
+      mutation: UPLOAD_STRING_FILES_MUTATION,
       variables: {
         owner: userId,
         files,

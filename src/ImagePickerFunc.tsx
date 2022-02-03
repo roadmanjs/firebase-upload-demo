@@ -55,38 +55,13 @@ export const UploadComponent = () => {
             xhr.send(null);
         });
 
-        // function urltoFile(url: string, filename?: string, mimeType?: string): Promise<File> {
-        //     return (fetch(url)
-        //         .then(function (res) { return res.arrayBuffer(); })
-        //         .then(function (buf) { return new File([buf], filename || "some name", { type: mimeType = "image/jpeg" }); })
-        //     );
-        // }
-
-        // const newFile = new File([blob], "blob");
-
-        // const url = URL.createObjectURL(newFile);
-
-        setState({ ...state, image: uri })
-
-        // TODO 
-        // convert this string stream to uploadable file for my graphql path,
-        // else add a path for receiving string streams.
-
-
-        // const file = await urltoFile(uri);
-
+       
         console.log("resolved blog", blob);
 
+        const uploaded = await uploadFilesApi({ files: [{ uri, mimetype: blob.type, filename: "blob" }], client })
 
-        // console.log(s"file blog is", file);
-
-        // const uploaded = await uploadFilesApi({ files: [file], client })
-
-        // console.log("uploaded is ", uploaded);
-        // // We're done with the blob, close and release it
-        // blob.close();
-
-        // return uploaded;
+        console.log("uploaded is ", uploaded);
+        
     }
 
     const _maybeRenderUploadingOverlay = () => {
@@ -171,8 +146,6 @@ export const UploadComponent = () => {
         } catch (e) {
             console.log(e);
             alert("Upload failed, sorry :(");
-        } finally {
-            setState({ ...state, uploading: false });
         }
     };
 

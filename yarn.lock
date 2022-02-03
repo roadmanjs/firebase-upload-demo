@@ -1452,10 +1452,10 @@
   dependencies:
     nanoid "^3.1.23"
 
-"@roadmanjs/firebase-client@^0.0.7":
-  version "0.0.7"
-  resolved "https://registry.yarnpkg.com/@roadmanjs/firebase-client/-/firebase-client-0.0.7.tgz#a5c2e873384a975b1d22120eb0555907f7927342"
-  integrity sha512-KVMAu5Fmm6TkFCszz3GhI1ZXFSGomM4AYd28Aic6JC4Is2uKuQCSOMyz0Znev52VBN45aZEAu0tLpM1WR+mu2g==
+"@roadmanjs/firebase-client@^0.0.11":
+  version "0.0.11"
+  resolved "https://registry.yarnpkg.com/@roadmanjs/firebase-client/-/firebase-client-0.0.11.tgz#50846f0f5434b612913be01c9843bb2ae266edab"
+  integrity sha512-GgNv7M8BEV3c8aHRAYL9ZzUlMsulIPaNCFV8pCgBsmer+1njPBGriNF6fkUkF0KWJlCI3iM+mVI19uj792yAcg==
   dependencies:
     graphql-tag "^2.12.5"
 
